@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinar Kakutsey · Author of The Little Turing Codebreakers</title>
+<meta name="description" content="Chinar Kakutsey is a software engineer, dad and author of The Little Turing Codebreakers, screen-free coding mysteries for kids.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/InterDisplay-Black.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:title" content="Chinar Kakutsey · Author">
+<meta property="og:description" content="Puzzle mysteries that teach kids to think like computer scientists.">
+<meta property="og:image" content="https://chinarkakutsey.com/assets/img/cover-og.jpg">
+<meta property="og:url" content="https://chinarkakutsey.com/">
+<meta property="og:type" content="profile">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="home" href="./">Chinar Kakutsey</a>
+    <nav aria-label="Main"><a href="#books">Books</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Chinar<br>Kakutsey</h1>
+    <ul class="code-name" id="code-name" aria-label="My first name in binary letter code">
+      <li data-b="00011" data-l="C">00011</li><li data-b="01000" data-l="H">01000</li><li data-b="01001" data-l="I">01001</li>
+      <li data-b="01110" data-l="N">01110</li><li data-b="00001" data-l="A">00001</li><li data-b="10010" data-l="R">10010</li>
+    </ul>
+    <div class="code-row">
+      <button class="code-btn" type="button" id="decode" aria-pressed="false">Decode it</button>
+      <p class="code-hint" id="code-hint">My first name, written in the secret letter code from my books (A = 1, B = 2 …).</p>
+    </div>
+    <p class="tagline">I write puzzle mysteries that teach children to think like computer scientists, with nothing but a pencil.</p>
+  </div>
+</section>
+
+<section class="block" id="books">
+  <div class="wrap">
+    <h2>Books</h2>
+    <article class="book">
+      <a href="https://littleturingpress.com"><img src="assets/img/cover.webp" width="900" height="1350" alt="Cover of The Little Turing Codebreakers and The Glitching Robot."></a>
+      <div>
+        <h3>The Little Turing Codebreakers &amp; The Glitching Robot</h3>
+        <p class="meta">Book 1 of The Little Turing Codebreakers · for ages 8–11 · paperback, 2026</p>
+        <p class="measure">A crown vanishes from a locked vault. Robots go wild at the science fair. A skyscraper races towards a midnight blackout. Leo, Poppy and their glitchy robot Bit need a fourth detective to crack 24 puzzles about binary, ciphers, logic and algorithms.</p>
+        <div class="buttons">
+          <a class="btn btn-solid" href="https://littleturingpress.com">Visit the book's website</a>
+          <a class="btn" href="https://www.amazon.com/s?k=Little+Turing+Codebreakers+Glitching+Robot" rel="noopener">Buy on Amazon</a>
+        </div>
+      </div>
+    </article>
+    <div class="next">
+      <img src="assets/img/bit.webp" width="420" height="420" alt="" loading="lazy">
+      <p><b>Coming next:</b> Book 2 of the Codebreakers is in the works. After that, I'm planning new books for younger readers who are just starting out, and tougher challenges for older kids.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block about" id="about">
+  <div class="wrap"><div class="measure">
+    <h2>About me</h2>
+    <p>Hello! I'm a software engineer and a dad. For almost twenty years I have built computer systems that help engineers design cars, machines and factories. Today I run my own software company in Nürnberg, Germany.</p>
+    <p>At home, my favourite job is making puzzles for my 8-year-old son. It started with secret codes on the breakfast table and treasure hunts around the house. Soon there were binary riddles, logic puzzles and mysteries to solve before bedtime. He always asked for "just one more!", and those puzzles became my first book.</p>
+    <p>In my job, finding a bug is a lot like solving a mystery: collect the clues, test every idea, and never trust a computer just because it sounds sure. That's what I want children to discover. Computer science is not only about screens. It's about thinking clearly, asking good questions, and having fun with a pencil and paper.</p>
+  </div></div>
+</section>
+
+<section class="block contact" id="contact">
+  <div class="wrap">
+    <h2>Say hello</h2>
+    <p class="measure">Readers, parents, teachers, bookshops and press are all welcome. I read every message.</p>
+    <a class="mail" href="mailto:chinar@chinarkakutsey.com">chinar@chinarkakutsey.com</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>© 2026 Chinar Kakutsey · <a href="https://littleturingpress.com">littleturingpress.com</a></div>
+    <nav aria-label="Legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz / Privacy</a></nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const list = document.getElementById("code-name"), btn = document.getElementById("decode"), hint = document.getElementById("code-hint");
+  btn.addEventListener("click", function () {
+    const on = !list.classList.contains("decoded");
+    list.classList.toggle("decoded", on);
+    list.querySelectorAll("li").forEach(li => { li.textContent = on ? li.dataset.l : li.dataset.b; });
+    btn.textContent = on ? "Show the code" : "Decode it";
+    btn.setAttribute("aria-pressed", on);
+    hint.textContent = on ? "00011 = 2 + 1 = 3 = C. Each block is one letter." : "My first name, written in the secret letter code from my books (A = 1, B = 2 …).";
+  });
+})();
+</script>
+</body>
+</html>
