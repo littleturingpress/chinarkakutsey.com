@@ -58,6 +58,7 @@ section.block { padding: 72px 0; border-bottom: 1px solid var(--line); }
 .btn { display: inline-block; text-decoration: none; font-weight: 700; padding: 11px 20px; border-radius: 999px; border: 2px solid var(--night); color: var(--night); }
 .btn-solid { background: var(--night); color: #fff; }
 .btn:hover { background: var(--signal); border-color: var(--signal); color: var(--night); }
+.btn-soon, .btn-soon:hover { background: transparent; border: 2px dashed #9fb0d4; color: var(--muted); cursor: default; }
 .next { margin-top: 44px; padding: 22px 24px; border: 2px dashed #b9c6de; border-radius: 12px; display: flex; gap: 20px; align-items: center; }
 .next img { width: 84px; flex: none; }
 .next p { margin: 0; }
